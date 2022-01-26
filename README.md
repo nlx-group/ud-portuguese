@@ -24,3 +24,11 @@ The file `cintil-contracted-upos.tsv` contains text as it normally appears in wr
 
 The file `cintil-upos.tsv` contains the same text but with expanded contractions.
 This tokenization conforms to the [CINTIL annotation guidelines](http://www.di.fc.ul.pt/~ahb/pubs/2005BarretoBrancoMendesEtAl.pdf).
+
+
+## License
+
+The models and datasets in this repository are made available under the Creative Commons BY-NC-ND license (Attribution-NonCommercial-NoDerivatives 4.0 International).
+
+See LICENSE.txt for full text.
+
