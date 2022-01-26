@@ -11,7 +11,7 @@ You have two choices to download the code and datasets:
     * [CINTIL-UPos dataset](https://portulanclarin.net/repository/browse/cintil-upos/3aeee0ba7d2511ec93d302420a87011b71d1cce08e0e4689a3ce96b6fda67312/)
     * CINTIL-UDep dataset (comming soon)
     * LX-UPosTagger (Transformer) model (comming soon)
-    * LX-UDepParser (NLP4J) model (comming soon)
+    * [LX-UDepParser](https://portulanclarin.net/repository/browse/lx-udepparser/5ae6058c7e3911ec93d302420a87011b50a034a1eb0e47a5988a0b2326f50372/) (NLP4J) model
 
 ## CINTIL-UPos
 
