@@ -13,7 +13,8 @@ After installation, you may run NLP4J with the following command:
 
 The configuration file assumes that the model file resides in the same directory from where the `nlpdecode` command will be executed.  If you get an error, try changing the model file path to an absolute path.
 
-Replace INPUTFILE with the appropriate file name.
+Replace INPUTFILE with the appropriate file name.  The input format is TSV (tab-separated-values) with four columns: form, lemma, UPOS, features.
+This model was trained on texts annotated by LX-UPosTagger, and thus for the best performance we recommend to use LX-UPosTagger to annotate the input texts.
 
 ## License
 
