@@ -1,6 +1,6 @@
 # LX-UDepParser
 
-LX-UDepParser is currently based on the NLP4J dependency parser and the model provided in this repository was trained on the CINTIL-UDeps dataset.
+LX-UDepParser is currently based on the NLP4J dependency parser and the model provided in this repository was trained on the CINTIL-UDep dataset.
 
 The NLP4J model file is named `nlp4j-model-lxdepparser.xz`.
 The file named `nlp4j-model-lxdepparser-config.xml` is a XML configuration needed for running NLP4J.
@@ -20,7 +20,7 @@ This model was trained on texts annotated by LX-UPosTagger, and thus for the bes
 
 LX-UDepParser is available under the Creative Commons BY-NC-ND license (Attribution-NonCommercial-NoDerivatives 4.0 International).
 
-See LICENSE.txt for full text.
+See `../LICENSE.txt` for full text.
 
 NLP4J is available under the Apache2 license.
 

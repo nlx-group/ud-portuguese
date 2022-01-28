@@ -8,12 +8,12 @@ You have two choices to download the code and datasets:
 
 2. download zip files from the PORTULAN CLARIN repository:
 
-    * [CINTIL-UPos dataset](https://portulanclarin.net/repository/browse/cintil-upos/3aeee0ba7d2511ec93d302420a87011b71d1cce08e0e4689a3ce96b6fda67312/)
-    * [CINTIL-UDep dataset](https://portulanclarin.net/repository/browse/cintil-udep/323c45107e3e11ec93d302420a87011b333aff3eeebc4e6abde8e2df8505315c/)
-    * LX-UPosTagger (Transformer) model (comming soon)
-    * [LX-UDepParser NLP4J model](https://portulanclarin.net/repository/browse/lx-udepparser/5ae6058c7e3911ec93d302420a87011b50a034a1eb0e47a5988a0b2326f50372/) 
+    * [CINTIL-UPos dataset](https://hdl.handle.net/21.11129/0000-000E-8B30-F)
+    * [CINTIL-UDep dataset](https://hdl.handle.net/21.11129/0000-000E-8B2E-3)
+    * [LX-UPosTagger Transformer model](https://hdl.handle.net/21.11129/0000-000E-8B2F-2)
+    * [LX-UDepParser NLP4J model](https://hdl.handle.net/21.11129/0000-000E-8B31-E) 
 
-## CINTIL-UPos
+## CINTIL-UPos - CINTIL corpus annotated with Universal POS tags
 
 The directory `cintil-upos` contains the CINTIL-UPos dataset.
 
@@ -25,18 +25,54 @@ The file `cintil-contracted-upos.tsv` contains text as it normally appears in wr
 The file `cintil-upos.tsv` contains the same text but with expanded contractions.
 This tokenization conforms to the [CINTIL annotation guidelines](http://www.di.fc.ul.pt/~ahb/pubs/2005BarretoBrancoMendesEtAl.pdf).
 
-## CINTIL-UDep
+## CINTIL-UDep - CINTIL treebank annotated with Universal Dependencies
 
 The directory `cintil-udep` contains the CINTIL-UDep treebank.
 This treebank contains 37780 sentences and 473929 tokens.
 
-The directory contains the file `cintil-udep.conll` in CONLL format, which is a TSV format (tab-separated values) with 10 columns: token id, form, lemma, cpos, pos, feat, head, deprel, phead, pdeprel.
+The file `cintil-udep.conll` in CONLL format, which is a TSV format (tab-separated values) with 10 columns: token id, form, lemma, cpos, pos, feat, head, deprel, phead, pdeprel.
 Sentences are separated with empty lines.  Note that both the POS and dependencies in this file are manually validated.  The LX-UdepParser was trained on a derivative of this file, where the POS annotations were made by the LX-UPosTagger, instead.
 
 Lines starting with an hash (#) are comments.
 
 The tokenization conforms to the [CINTIL annotation guidelines](http://www.di.fc.ul.pt/~ahb/pubs/2005BarretoBrancoMendesEtAl.pdf).
 
+# LX-UPosTagger
+
+The directory `lx-upostagger` contains the LX-UPosTagger.
+
+This tagger is based on the [BERTimbau pre-trained BERT model](https://github.com/neuralmind-ai/portuguese-bert) and has been fined tuned on the CINTIL-UPos dataset.
+
+The model files are contained in the directory `lx-upostagger/model`.
+
+Please download and install Python (>=3.7), and then install required packages with the command `pip install -r requirements.txt` (assuming the current directory is `lx-upostagger`).
+
+After installation, you may run LX-UPosTagger with the following command:
+
+    python lxupostagger.py < INPUTFILE > OUTPUTFILE
+
+Replace INPUTFILE and OUTPUTFILE with the appropriate file names.  The input format is plain text with one sentence per line.
+The output format is TSV (tab-separated-values) with two columns: token and UPOS.
+
+# LX-UDepParser
+
+The directory `lx-udepparser` contains the LX-UDepParser.
+
+This parser is currently based on the NLP4J dependency parser and the model provided in this repository was trained on the CINTIL-UDep dataset.
+
+The NLP4J model file is named `nlp4j-model-lxdepparser.xz`.
+The file named `nlp4j-model-lxdepparser-config.xml` is a XML configuration needed for running NLP4J.
+
+Please download and install NLP4J, following instructions from https://github.com/emorynlp/nlp4j.
+
+After installation, you may run NLP4J with the following command:
+
+    nlpdecode -c nlp4j-model-lxdepparser-config.xml -format tsv -oe annotated -i INPUTFILE
+
+The configuration file assumes that the model file resides in the same directory from where the `nlpdecode` command will be executed.  If you get an error, try changing the model file path to an absolute path.
+
+Replace INPUTFILE with the appropriate file name.  The input format is TSV (tab-separated-values) with four columns: form, lemma, UPOS, features.
+This model was trained on texts annotated by LX-UPosTagger, and thus for the best performance we recommend to use LX-UPosTagger to annotate the input texts.
 
 ## License
 
