@@ -3,7 +3,7 @@
 The CINTIL-UDep treebank contains 37780 sentences and 473929 tokens.
 
 The file `cintil-udep.conll` in CONLL format, which is a TSV format (tab-separated values) with 10 columns: token id, form, lemma, cpos, pos, feat, head, deprel, phead, pdeprel.
-Sentences are separated with empty lines.  Note that both the POS and dependencies in this file are manually validated.  The LX-UdepParser was trained on a derivative of this file, where the POS annotations were made by the LX-UPosTagger, instead.
+Sentences are separated with empty lines.  Note that both the POS and dependencies in this file are manually validated.  The LX-UDParser was trained on a derivative of this file, where the POS annotations were made by the LX-UTagger, instead.
 
 Lines starting with an hash (#) are comments.
 

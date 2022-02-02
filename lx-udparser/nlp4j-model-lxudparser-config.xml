@@ -8,6 +8,6 @@
         <column index="6" field="deprel"/>
     </tsv>
     <models>
-        <dep>nlp4j-model-lxdepparser.xz</dep>
+        <dep>nlp4j-model-lxudparser.xz</dep>
     </models>
 </configuration>
