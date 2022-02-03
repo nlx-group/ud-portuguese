@@ -8,10 +8,15 @@ You have two choices to download the code and datasets:
 
 2. download zip files from the PORTULAN CLARIN repository:
 
-    * [CINTIL-UPos dataset](https://hdl.handle.net/21.11129/0000-000E-8B30-F)
-    * [CINTIL-UDep dataset](https://hdl.handle.net/21.11129/0000-000E-8B2E-3)
-    * [LX-UTagger Transformer model](https://hdl.handle.net/21.11129/0000-000E-8B2F-2)
-    * [LX-UDParser NLP4J model](https://hdl.handle.net/21.11129/0000-000E-8B31-E) 
+* [CINTIL-UPos dataset](https://hdl.handle.net/21.11129/0000-000E-8B30-F)
+* [CINTIL-UDep dataset](https://hdl.handle.net/21.11129/0000-000E-8B2E-3)
+* [LX-UTagger Transformer model](https://hdl.handle.net/21.11129/0000-000E-8B2F-2)
+* [LX-UDParser NLP4J model](https://hdl.handle.net/21.11129/0000-000E-8B31-E) 
+
+However, the recommended and easiest way to use LX-UTagger and LX-UDParser is from the PORTULAN CLARIN workbench:
+
+* [LX-UTagger](https://portulanclarin.net/workbench/lx-utagger/)
+* [LX-UDParser](https://portulanclarin.net/workbench/lx-udparser/)
 
 ## CINTIL-UPos - CINTIL corpus annotated with Universal POS tags
 
