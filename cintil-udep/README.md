@@ -13,4 +13,4 @@ The tokenization conforms to the [CINTIL annotation guidelines](http://www.di.fc
 
 CINTIL-UDep is available under the Creative Commons BY-NC-ND license (Attribution-NonCommercial-NoDerivatives 4.0 International).
 
-See `../LICENSE.txt` for full text.
+See `LICENSE.txt` for full text.

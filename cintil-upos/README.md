@@ -1,4 +1,6 @@
-# CINTIL-UPos - CINTIL corpus annotated with Universal POS tags
+# CINTIL-UPos - CINTIL dataset annotated with Universal POS tags
+
+This dataset results from merging the CINTIL Treebank with the CINTIL Corpus.
 
 Files are in TSV format (tab-separated values) with two columns: tokens and UPOS tags.
 Sentences are separated with empty lines.
@@ -12,4 +14,4 @@ This tokenization conforms to the [CINTIL annotation guidelines](http://www.di.f
 
 CINTIL-UPos is available under the Creative Commons BY-NC-ND license (Attribution-NonCommercial-NoDerivatives 4.0 International).
 
-See `../LICENSE.txt` for full text.
+See `LICENSE.txt` for full text.
