@@ -1,6 +1,7 @@
 # Universal Grammatical Dependencies for Portuguese
 
-This repository contains the models and datasets described in the article titled "Universal Grammatical Dependencies for Portuguese" submitted to LREC 2022.
+This repository contains the models and datasets described in the article titled "Universal Grammatical Dependencies for Portuguese with CINTIL Data, LX Processing and CLARIN support" presented in LREC 2022.
+
 
 You have two choices to download the code and datasets:
 
@@ -10,13 +11,16 @@ You have two choices to download the code and datasets:
 
 * [CINTIL-UPos dataset](https://hdl.handle.net/21.11129/0000-000E-8B30-F)
 * [CINTIL-UDep dataset](https://hdl.handle.net/21.11129/0000-000E-8B2E-3)
+* [CINTIL-USuite dataset]()
 * [LX-UTagger Transformer model](https://hdl.handle.net/21.11129/0000-000E-8B2F-2)
 * [LX-UDParser NLP4J model](https://hdl.handle.net/21.11129/0000-000E-8B31-E) 
+* [LX-USuite models]()
 
 However, the recommended and easiest way to use LX-UTagger and LX-UDParser is from the PORTULAN CLARIN workbench:
 
 * [LX-UTagger](https://portulanclarin.net/workbench/lx-utagger/)
 * [LX-UDParser](https://portulanclarin.net/workbench/lx-udparser/)
+* [LX-USuite](https://portulanclarin.net/workbench/lx-usuite/)
 
 ## CINTIL-UPos - CINTIL corpus annotated with Universal POS tags
 
@@ -27,7 +31,28 @@ Sentences are separated with empty lines.
 
 The file `cintil-contracted-upos.tsv` contains text as it normally appears in written form, with certain expressions in contracted form, such as "do" which results from the contraction of preposition "de" with definite article "o".  This is the dataset that was used to train the LX-UTagger.
 
+Sample sentence:
+
+    A           DET
+    encomenda   NOUN
+    está        VERB
+    no          ADP+DET
+    armazém     NOUN
+    .           PUNCT
+    
+
 The file `cintil-upos.tsv` contains the same text but with expanded contractions.
+
+Sample sentence:
+
+    A           DET
+    encomenda   NOUN
+    está        VERB
+    em_         ADP
+    o           DET
+    armazém     NOUN
+    .           PUNCT
+
 This tokenization conforms to the [CINTIL annotation guidelines](http://www.di.fc.ul.pt/~ahb/pubs/2005BarretoBrancoMendesEtAl.pdf).
 
 ## CINTIL-UDep - CINTIL treebank annotated with Universal Dependencies
@@ -41,6 +66,24 @@ Sentences are separated with empty lines.  Note that both the POS and dependenci
 Lines starting with an hash (#) are comments.
 
 The tokenization conforms to the [CINTIL annotation guidelines](http://www.di.fc.ul.pt/~ahb/pubs/2005BarretoBrancoMendesEtAl.pdf).
+
+## CINTIL-USuite - CINTIL corpus annotated with Universal POS tags, lemmas and Universal features
+
+The directory `cintil-usuite` contains the CINTIL-USuite dataset.
+
+The directory contains two files in TSV format (tab-separated values) with four columns: tokens, lemmas, UPOS tags and universal feature bundles.
+Sentences are separated with empty lines.
+
+The file `cintil-contracted-usuite.tsv` contains text as it normally appears in written form, with certain expressions in contracted form, such as "do" which results from the contraction of preposition "de" with definite article "o".  This is the dataset that was used to train the models underpinning LX-USuite, which include LX-UTagger, LX-UFeaturizer and LX-NeuralLemmatizer.
+
+Sample sentence:
+
+The file `cintil-usuite.tsv` contains the same text as `cintil-contracted-usuite.tsv` but with expanded contractions.
+
+Sample sentence:
+
+
+This tokenization conforms to the [CINTIL annotation guidelines](http://www.di.fc.ul.pt/~ahb/pubs/2005BarretoBrancoMendesEtAl.pdf).
 
 # LX-UTagger
 
@@ -82,6 +125,20 @@ This model was trained on texts annotated by LX-UTagger, and thus for the best p
 ## License
 
 The models and datasets in this repository are made available under the Creative Commons BY-NC-ND license (Attribution-NonCommercial-NoDerivatives 4.0 International).
+
+Please cite this paper if you use any of the models or datasets in this repository:
+
+    @InProceedings{branco-EtAl:2022:LREC,
+        author    = {Branco, António  and  Silva, João Ricardo  and  Gomes, Luís  and  António Rodrigues, João},
+        title     = {Universal Grammatical Dependencies for Portuguese with CINTIL Data, LX Processing and CLARIN support},
+        booktitle = {Proceedings of the Language Resources and Evaluation Conference},
+        month     = {June},
+        year      = {2022},
+        address   = {Marseille, France},
+        publisher = {European Language Resources Association},
+        pages     = {5617--5626},
+        url       = {https://aclanthology.org/2022.lrec-1.603}
+    }
 
 See LICENSE.txt for full text.
 
