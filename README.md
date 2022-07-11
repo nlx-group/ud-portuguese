@@ -60,8 +60,22 @@ This tokenization conforms to the [CINTIL annotation guidelines](http://www.di.f
 The directory `cintil-udep` contains the CINTIL-UDep treebank.
 This treebank contains 37780 sentences and 473929 tokens.
 
-The file `cintil-udep.conll` in CONLL format, which is a TSV format (tab-separated values) with 10 columns: token id, form, lemma, cpos, pos, feat, head, deprel, phead, pdeprel.
+The file `cintil-udep.conllu` in CONLL-U format, which is a TSV format (tab-separated values) with 10 columns:
+
+1. ID: Word index, integer starting at 1 for each new sentence; may be a range for multiword tokens; may be a decimal number for empty nodes (decimal numbers can be lower than 1 but must be greater than 0).
+2. FORM: Word form or punctuation symbol.
+3. LEMMA: Lemma of word form.
+4. UPOS: Universal part-of-speech tag.
+5. XPOS: Language-specific part-of-speech tag.
+6. FEATS: List of morphological features from the universal feature inventory or from a defined language-specific extension; underscore if not available.
+7. HEAD: Head of the current word, which is either a value of ID or zero (0).
+8. DEPREL: Universal dependency relation to the HEAD (root iff HEAD = 0) or a defined language-specific subtype of one.
+9. DEPS: Enhanced dependency graph in the form of a list of head-deprel pairs.
+10. MISC: Any other annotation.
+
 Sentences are separated with empty lines.  Note that both the POS and dependencies in this file are manually validated.  The LX-UDParser was trained on a derivative of this file, where the POS annotations were made by the LX-UTagger, instead.
+
+See https://universaldependencies.org/format.html#conll-u-format for more details on the CONLL-U format.
 
 Lines starting with an hash (#) are comments.
 
@@ -87,40 +101,16 @@ This tokenization conforms to the [CINTIL annotation guidelines](http://www.di.f
 
 # LX-UTagger
 
-The directory `lx-utagger` contains the LX-UTagger.
+The directory `lx-utagger` contains the LX-UTagger.  See [`lx-utagger/README.md`](lx-utagger/README.md) for more information.
 
-This tagger is based on the [BERTimbau pre-trained BERT model](https://github.com/neuralmind-ai/portuguese-bert) and has been fined tuned on the CINTIL-UPos dataset.
+This tagger is based on the [BERTimbau pre-trained BERT model](https://github.com/neuralmind-ai/portuguese-bert) and has been fined tuned on the CINTIL-UPos dataset, available [from the PORTULAN CLARIN repository](https://hdl.handle.net/21.11129/0000-000E-8B30-F) or from [the nlx-group/ud-portuguese github repository](https://github.com/nlx-group/ud-portuguese).
 
-The model files are contained in the directory `lx-utagger/model`.
-
-Please download and install Python (>=3.7), and then install required packages with the command `pip install -r requirements.txt` (assuming the current directory is `lx-utagger`).
-
-After installation, you may run LX-UTagger with the following command:
-
-    python lxutagger.py < INPUTFILE > OUTPUTFILE
-
-Replace INPUTFILE and OUTPUTFILE with the appropriate file names.  The input format is plain text with one sentence per line.
-The output format is TSV (tab-separated-values) with two columns: token and UPOS.
 
 # LX-UDParser
 
-The directory `lx-udparser` contains the LX-UDParser.
+The directory `lx-udparser` contains the LX-UDParser.  See [`lx-udparser/README.md`](lx-udparser/README.md) for more information.
 
 This parser is currently based on the NLP4J dependency parser and the model provided in this repository was trained on the CINTIL-UDep dataset.
-
-The NLP4J model file is named `nlp4j-model-lxudparser.xz`.
-The file named `nlp4j-model-lxudparser-config.xml` is a XML configuration needed for running NLP4J.
-
-Please download and install NLP4J, following instructions from https://github.com/emorynlp/nlp4j.
-
-After installation, you may run NLP4J with the following command:
-
-    nlpdecode -c nlp4j-model-lxudparser-config.xml -format tsv -oe annotated -i INPUTFILE
-
-The configuration file assumes that the model file resides in the same directory from where the `nlpdecode` command will be executed.  If you get an error, try changing the model file path to an absolute path.
-
-Replace INPUTFILE with the appropriate file name.  The input format is TSV (tab-separated-values) with four columns: form, lemma, UPOS, features.
-This model was trained on texts annotated by LX-UTagger, and thus for the best performance we recommend to use LX-UTagger to annotate the input texts.
 
 ## License
 
