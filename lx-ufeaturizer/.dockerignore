@@ -1,0 +1,14 @@
+.git/
+data/
+models/
+venv/
+wandb/
+.bumpversion.cfg
+.dockerignore
+.flake8
+.gitignore
+build-docker-image.sh
+Dockerfile
+prepare-train-eval-data.ipynb
+README.md
+requirements-train.txt
