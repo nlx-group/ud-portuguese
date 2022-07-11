@@ -28,13 +28,13 @@ The followind data is available in this repository:
 
 * The directory [`cintil-upos`](./cintil-upos) contains the CINTIL-UPos - CINTIL corpus annotated with Universal POS tags. See [`cintil-upos/README.md`](./cintil-upos/README.md).
 * The directory [`cintil-udep`](./cintil-udep) contains the CINTIL-UDep - CINTIL treebank annotated with Universal Dependencies. See [`cintil-udep/README.md`](./cintil-udep/README.md).
-* The directory `cintil-usuite` contains the CINTIL-USuite - CINTIL corpus annotated with Universal POS tags, lemmas and Universal features. See [`cintil-usuite/README.md`](./cintil-usuite/README.md).
+* The directory [`cintil-usuite`](./cintil-usuite) contains the CINTIL-USuite - CINTIL corpus annotated with Universal POS tags, lemmas and Universal features. See [`cintil-usuite/README.md`](./cintil-usuite/README.md).
 
 The followind models are available in this repository:
 
-* The directory `lx-udparser` contains the LX-UDParser NLP4J model.  See [`lx-udparser/README.md`](lx-udparser/README.md) for more information.
-* The directory `lx-utagger` contains the LX-UTagger Transformer model.  See [`lx-utagger/README.md`](lx-utagger/README.md) for more information.
-* The directory `lx-udsuite` contains the LX-USuite Transformer models.  See [`lx-usuite/README.md`](lx-usuite/README.md) for more information.
+* The directory [`lx-udparser`](./lx-udparser) contains the LX-UDParser NLP4J model.  See [`lx-udparser/README.md`](lx-udparser/README.md) for more information.
+* The directory [`lx-utagger`](./lx-utagger) contains the LX-UTagger Transformer model.  See [`lx-utagger/README.md`](lx-utagger/README.md) for more information.
+* The directory [`lx-usuite`](./lx-usuite) contains the LX-USuite Transformer models.  See [`lx-usuite/README.md`](lx-usuite/README.md) for more information.
 
 
 ## Publications
