@@ -34,7 +34,9 @@ The followind models are available in this repository:
 
 * The directory [`lx-udparser`](./lx-udparser) contains the LX-UDParser NLP4J model.  See [`lx-udparser/README.md`](lx-udparser/README.md) for more information.
 * The directory [`lx-utagger`](./lx-utagger) contains the LX-UTagger Transformer model.  See [`lx-utagger/README.md`](lx-utagger/README.md) for more information.
-* The directory [`lx-usuite`](./lx-usuite) contains the LX-USuite Transformer models.  See [`lx-usuite/README.md`](lx-usuite/README.md) for more information.
+* The directory [`lx-usuite`](./lx-usuite) contains the LX-USuite code, which is a wrapper for three token classifiers (LX-UTagger, LX-UFeaturizer and LX-NeuralLemmatizer)  See [`lx-usuite/README.md`](lx-usuite/README.md) for more information.
+* The directory [`lx-ufeaturizer`](./lx-ufeaturizer) contains the LX-UFeaturizer Transformer models.  See [`lx-ufeaturizer/README.md`](lx-ufeaturizer/README.md) for more information.
+* The directory [`lx-neurallemmatizer`](./lx-neurallemmatizer) contains the LX-NeuralLemmatizer Transformer models.  See [`lx-neurallemmatizer/README.md`](lx-neurallemmatizer/README.md) for more information.
 
 
 ## Publications
