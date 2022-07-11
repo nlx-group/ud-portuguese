@@ -39,9 +39,9 @@ Assuming Python (>=3.7) is installed, run this command to install required packa
 After WSGI-RPC servers for the three components are setup and running on Docker containers, LX-USuite can be used to analyse a plain text file as follows (Bash syntax):
 
 
-    TAGGER_URL="http://localhost:8000" # the URL of the LX-UTagger WSGI-RPC server
-    LEMMA_URL="http://localhost:8001"  # the URL of the LX-NeuralLemmatizer WSGI-RPC server
-    FEAT_URL="http://localhost:8002"   # the URL of the LX-UFeaturizer WSGI-RPC server
+    TAGGER_URL="http://localhost:8000"
+    LEMMA_URL="http://localhost:8001"
+    FEAT_URL="http://localhost:8002"
 
     ./lxusuite $LEMMA_URL $TAGGER_URL $FEAT_URL < INPUTFILE > OUTPUTFILE
 
