@@ -20,7 +20,7 @@ This model was trained on texts annotated by LX-UPosTagger, and thus for the bes
 
 LX-UDParser is available under the Creative Commons BY-NC-ND license (Attribution-NonCommercial-NoDerivatives 4.0 International).
 
-See `LICENSE.txt` for full text.
+See [`LICENSE.txt`](./LICENSE.txt) for full text.
 
 NLP4J is available under the Apache2 license.
 
