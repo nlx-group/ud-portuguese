@@ -29,7 +29,7 @@ A pre-built image is available from Docker hub.  Assuming that docker is already
 
 Alternatively, to build the docker image, assuming docker is already installed, execute the command `docker build --tag lxutagger:latest`.
 
-By default, running this image will start a WSGI-RPC server, which can be accessed via sockets as shown in `example-client.py`.
+By default, running this image will start a WSGI-RPC server, which can be accessed via sockets as shown in `lxutagger-wsgirpc-client.py`.
 To start the docker container, execute the command: `docker run --rm --detach --name lxutagger --publish 8000:8000 lxutagger:latest`.
 
 Then, to communicate with the WSGI-RPC server running on the container, assuming Python (>=3.7) is already installed, a couple of packages need to be installed:
