@@ -33,7 +33,7 @@ Bibtex:
 
 ## Download
 
-The most recent version of this dataset may be downloaded from [the PORTULAN CLARIN repository]() or from [the nlx-group/ud-portuguese github repository](https://github.com/nlx-group/ud-portuguese).
+The most recent version of this dataset may be downloaded from [the PORTULAN CLARIN repository](https://hdl.handle.net/21.11129/0000-000F-327D-D) or from [the nlx-group/ud-portuguese github repository](https://github.com/nlx-group/ud-portuguese).
 
 
 
