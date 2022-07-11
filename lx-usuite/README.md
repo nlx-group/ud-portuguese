@@ -58,6 +58,13 @@ Where:
     1. and Universal features bundle.
 An empty line denotes the end of a sentence.
 
+### Run LX-USuite components without Docker
+
+Follow the instructions on each component's `README.md` file to install their requirements.
+Manually start the WSGI-RPC server for each component.  Specify a different port for each server.
+
+Run LX-USuite as described above, when running components within Docker containers.
+
 
 ## Publications
 
