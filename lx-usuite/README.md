@@ -38,9 +38,6 @@ Assuming Python (>=3.7) is installed, run this command to install required packa
 
 After WSGI-RPC servers for the three components are setup and running on Docker containers, LX-USuite can be used to analyse a plain text file as follows (Bash syntax):
 
-* LX-UTagger WSGI-RPC server is available on `http://localhost:8000`,
-* LX-NeuralLemmatizer WSGI-RPC is available on `http://localhost:8001`,
-* LX-UFeaturizer WSGI-RPC server is available on `http://localhost:8002`,
 
     TAGGER_URL="http://localhost:8000" # the URL of the LX-UTagger WSGI-RPC server
     LEMMA_URL="http://localhost:8001"  # the URL of the LX-NeuralLemmatizer WSGI-RPC server
@@ -48,8 +45,18 @@ After WSGI-RPC servers for the three components are setup and running on Docker 
 
     ./lxusuite $LEMMA_URL $TAGGER_URL $FEAT_URL < INPUTFILE > OUTPUTFILE
 
-Where `INPUTFILE` is a plain text file with one sentence per line, and `OUTPUTFILE` will be a TSV file, with four columns: token form, lemma, UPOS tag and Universal features bundle.
-End of a sentence is marked with an empty line.
+Where:
+
+* the `TAGGER_URL` variable contains the URL of the LX-UTagger WSGI-RPC server,
+* the `LEMMA_URL` variable contains the URL of the LX-NeuralLemmatizer WSGI-RPC server,
+* the `FEAT_URL` variable contains the URL of the LX-UFeaturizer WSGI-RPC server,
+* `INPUTFILE` is the path of a plain text file with one sentence per line,
+* and `OUTPUTFILE` is the path of the output TSV file, which will contain four columns per token:
+    1. the token form,
+    1. the lemma,
+    1. the UPOS tag
+    1. and Universal features bundle.
+An empty line denotes the end of a sentence.
 
 
 ## Publications
