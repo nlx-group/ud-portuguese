@@ -1,6 +1,9 @@
 import logging
+import sys
+
 import transformers
 import lxcommon
+import lxtokenizer
 
 
 __version__ = "0.2.0"
@@ -130,16 +133,17 @@ class LxUFeaturizer:
             raise LxUFeaturizerException("Input and output lengths are not the same")
         for sentence, output_sentence in zip(paragraph, pipeline_output):
             for token, output_token in zip(sentence, output_sentence):
-                token.ufeats = output_token["entity"]
+                ufeats = output_token["entity"]
+                if ufeats:
+                    ufeats = "|".join(sorted(ufeats.split("|")))
+                token.ufeats = ufeats
         return paragraph
 
     def featurize_sentence(self, sentence):
         return self.featurize_paragraph(lxcommon.LxParagraph(sentence))[0]
 
 
-if __name__ == '__main__':
-    import sys
-    import lxtokenizer
+def main():
     tokenizer = lxtokenizer.LxTokenizer()
     featurizer = LxUFeaturizer()
     for line in sys.stdin:
@@ -148,3 +152,7 @@ if __name__ == '__main__':
         for token in sentence:
             print(token.form, token.ufeats, sep="\t")
         print()
+
+
+if __name__ == '__main__':
+    main()
